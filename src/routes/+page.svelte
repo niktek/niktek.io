@@ -1,5 +1,5 @@
-<script lang="ts">
-	import { VERCEL_ENV, VERCEL_URL } from '$env/static/public';
+<script>
+	export let data;
 </script>
 
-<p>{VERCEL_ENV} <br /> {VERCEL_URL}</p>
+<p>{data.vercelEnv } <br /> {data.vercelEnv}</p>
