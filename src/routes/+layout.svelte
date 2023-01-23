@@ -3,6 +3,12 @@
 	import '@skeletonlabs/skeleton/styles/all.css';
 	import '../app.postcss';
 	import { AppShell, AppBar } from '@skeletonlabs/skeleton';
+	import {inject} from '@vercel/analytics'
+
+	export let data;
+	if (data.vercelEnv == 'production'){
+		inject();
+	}
 </script>
 
 <!-- App Shell -->
