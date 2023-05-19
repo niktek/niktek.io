@@ -14,7 +14,7 @@ if (isCI) {
         }
     }
 } else {
-    console.log('No CI detected, setting @skeletonlabs/skeleton to workspace:*');
+    console.log('No CI detected, setting devDependencies to workspace:*');
     for (const [devDep, version] of Object.entries(pkg.deployConfig.devDependencies)) {
         pkg.devDependencies[devDep] = 'workspace:*';
     }
