@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "install": "node scripts/adjust-packages.mjs",
+    "install": "node scripts/adjust-packages.mjs && pnpm i",
     "dev": "vite dev",
     "build": "vite build",
     "preview": "vite preview",
