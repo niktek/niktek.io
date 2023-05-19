@@ -1,26 +1,37 @@
 import isCI from 'is-ci';
-import {readFileSync, writeFileSync} from 'fs';
-import {execSync} from 'child_process';
+import { readFileSync, writeFileSync } from 'fs';
+import { execSync } from 'child_process';
 
-let pkg = JSON.parse(readFileSync('./package.json', 'utf8'));
-let clean = true;
+export function makeWorkspacePackageLinks(pkg) {
+    for (const [devDep, version] of Object.entries(pkg.deployConfig.devDependencies)) {
+        pkg.devDependencies[devDep] = 'workspace:*';
+    }
+}
 
-if (isCI) {
-    console.log('CI detected, inserting devDependencies from deployConfig');
+export function makeVersionedPackageLinks(pkg) {
+    let clean = true;
     for (const [devDep, version] of Object.entries(pkg.deployConfig.devDependencies)) {
         if (pkg.devDependencies[devDep] !== version) {
             pkg.devDependencies[devDep] = version;
             clean = false;
         }
     }
-} else {
-    console.log('No CI detected, setting devDependencies to workspace:*');
-    for (const [devDep, version] of Object.entries(pkg.deployConfig.devDependencies)) {
-        pkg.devDependencies[devDep] = 'workspace:*';
+    return { pkg: pkg, clean: clean }
+}
+
+export function ci() {
+    let pkg = JSON.parse(readFileSync('./package.json', 'utf8'));
+    let clean = true;
+    if (isCI) {
+         ({pkg, clean} = makeVersionedPackageLinks(pkg));
+    } else {
+        console.log('No CI detected, setting devDependencies to workspace:*');
+        makeWorkspacePackageLinks(pkg);
+    }
+    writeFileSync('./package.json', JSON.stringify(pkg, null, 2), 'utf8');
+    if (clean === false) {
+        execSync('pnpm install --no-frozen-lockfile')
     }
 }
-writeFileSync('./package.json', JSON.stringify(pkg, null, 2), 'utf8');
-if (clean === false) {
-    execSync('pnpm install --no-frozen-lockfile')
-}
-process.exit(0);
+
+ci()
