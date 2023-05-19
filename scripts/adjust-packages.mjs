@@ -1,5 +1,6 @@
 import isCI from 'is-ci';
-import {readFileSync, writeFileSync, execSync} from 'fs';
+import {readFileSync, writeFileSync} from 'fs';
+import {execSync} from 'child_process';
 
 let pkg = JSON.parse(readFileSync('./package.json', 'utf8'));
 let clean = true;
