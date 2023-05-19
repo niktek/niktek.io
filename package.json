@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "install": "node scripts/adjust-packages.mjs && pnpm i",
+    "install": "node scripts/adjust-packages.mjs && pnpm install --no-frozen-lockfile",
     "dev": "vite dev",
     "build": "vite build",
     "preview": "vite preview",
