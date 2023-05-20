@@ -5,7 +5,7 @@ devDependencies:
     specifier: ^1.2.8
     version: 1.2.8
   '@skeletonlabs/skeleton':
-    specifier: workspace:*
+    specifier: workspace:^
     version: link:../../packages/skeleton
   '@sveltejs/adapter-auto':
     specifier: ^2.0.0
