@@ -78,9 +78,9 @@ export function swapdeps() {
             }
     }
     writeFileSync('./package.json', JSON.stringify(pkg, null, 2), 'utf8');
-    if (clean === false) {
-        execSync('pnpm install --no-frozen-lockfile')
-    }
+    // if (clean === false) {
+    //     execSync('pnpm install --no-frozen-lockfile')
+    // }
 }
 
 swapdeps()
