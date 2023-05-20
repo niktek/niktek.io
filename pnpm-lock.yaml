@@ -4,6 +4,9 @@ devDependencies:
   '@floating-ui/dom':
     specifier: ^1.2.8
     version: 1.2.8
+  '@niktekio/swapdeps':
+    specifier: workspace:^
+    version: link:../../packages/swapdeps
   '@skeletonlabs/skeleton':
     specifier: workspace:*
     version: link:../../packages/skeleton
