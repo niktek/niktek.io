@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "install": "pnpm swapdeps"
+    "install": "pnpm swapdeps",
     "installer": "echo 'install running' && node ./scripts/swapdeps.mjs",
     "dev": "vite dev",
     "build": "vite build",
