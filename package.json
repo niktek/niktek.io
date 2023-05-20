@@ -3,7 +3,7 @@
   "version": "0.0.2",
   "private": true,
   "scripts": {
-    "preinstall": "node ./scripts/swapdeps.mjs",
+    "install": "node ./scripts/swapdeps.mjs",
     "dev": "vite dev",
     "build": "vite build",
     "preview": "vite preview",
