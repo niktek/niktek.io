@@ -1,9 +1,12 @@
 {
-	"prettier.documentSelectors": ["**/*.svelte"],
+	"prettier.documentSelectors": [
+		"**/*.svelte"
+	],
 	"tailwindCSS.classAttributes": [
 		"class",
 		"accent",
 		"active",
+		"aspectRatio",
 		"background",
 		"badge",
 		"bgBackdrop",
@@ -23,6 +26,8 @@
 		"buttonPositive",
 		"buttonTextCancel",
 		"buttonTextConfirm",
+		"buttonTextFirst",
+		"buttonTextLast",
 		"buttonTextNext",
 		"buttonTextPrevious",
 		"buttonTextSubmit",
@@ -30,6 +35,8 @@
 		"caretOpen",
 		"chips",
 		"color",
+		"controlSeparator",
+		"controlVariant",
 		"cursor",
 		"display",
 		"element",
@@ -41,7 +48,7 @@
 		"gridColumns",
 		"height",
 		"hover",
-		"invalid",
+		"indent",
 		"justify",
 		"meter",
 		"padding",
@@ -51,14 +58,17 @@
 		"regionCaption",
 		"regionCaret",
 		"regionCell",
+		"regionChildren",
 		"regionCone",
 		"regionContent",
 		"regionControl",
 		"regionDefault",
 		"regionDrawer",
 		"regionFoot",
+		"regionFootCell",
 		"regionFooter",
 		"regionHead",
+		"regionHeadCell",
 		"regionHeader",
 		"regionIcon",
 		"regionInterface",
@@ -72,6 +82,9 @@
 		"regionPanel",
 		"regionRowHeadline",
 		"regionRowMain",
+		"regionSummary",
+		"regionSymbol",
+		"regionTab",
 		"regionTrail",
 		"ring",
 		"rounded",
@@ -92,6 +105,7 @@
 		"spacing",
 		"text",
 		"track",
-		"width"
+		"width",
+		"zIndex"
 	]
 }

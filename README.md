@@ -1,23 +1,38 @@
-# create-skeleton-app
+# create-svelte
 
-This is a special multi-repo version of the site created by CSA.
+Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
 
-Differences from a normal CSA site:
-- Vite alias to the @skeletonlabs/skeleton project
-- Removed @skeletonlabs/skeleton from package.json
-- Added Vercel deploy command to package.json
+## Creating a project
 
-At this point it only supports deploying to Vercel.
-
-## Reminder
-Since you have just created this site with `pnpm site <foo>`, make sure to `git init`, `git add .`, `gh repo create` and run `pnpm dev` at least once so that the alias gets setup in .svelte-kit
-
-## Deploying a site to Vercel
-Repos that are not part of the main Skeleton repo will not work independently of the monorepo due to the adjustments to the @skeletonlabs/skeleton package noted above.  Therefore to deploy a site, it is necessary to take advantage of the `vercel build` and `vercel deploy` of a local production build (or you can have fun setting up a GH deploy pipeline)
+If you're seeing this, you've probably already done this step. Congrats!
 
 ```bash
-# ensure you have the vercel cli tool
-pnpm i -g vercel
+# create a new project in the current directory
+npm create svelte@latest
+
+# create a new project in my-app
+npm create svelte@latest my-app
 ```
 
-Two scripts have been added to package.json
+## Developing
+
+Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+
+```bash
+npm run dev
+
+# or start the server and open the app in a new browser tab
+npm run dev -- --open
+```
+
+## Building
+
+To create a production version of your app:
+
+```bash
+npm run build
+```
+
+You can preview the production build with `npm run preview`.
+
+> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
